@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "department": "Human Resources",
+    "issues": [
+      {
+        "name": "Applicants are slowing",
+        "manager": "Stephanie Glick",
+        "description": "New job applications are down 34% over the last two weeks, compared to the number of job reqs available.",
+        "sent": false,
+        "responses":9,
+        "dateTime": "3 hours ago"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "department": "Facilities",
+    "issues": [
+      {
+        "name": "Floor temperature is low",
+        "manager": "Cho Sun Park",
+        "description": "Floor 3 and 4 temperatures are averaging 2.6 degrees cooler than other floors.",
+        "sent": false,
+        "responses":3,
+        "dateTime": "4 days ago"
+      },
+      {
+        "name": "Floor temperature is high",
+        "manager": "Cho Sun Park",
+        "description": "Floor 3 and 4 temperatures are averaging 2.6 degrees cooler than other floors.",
+        "sent": false,
+        "responses":16,
+        "dateTime": "2 days ago"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "department": "Engineering",
+    "issues": [
+      {
+        "name": "Longer time between product releases",
+        "manager": "Sumeet Mohdi",
+        "description": "Product release times are averaging 2.1 weeks longer than at this time in 2020.",
+        "sent": false,
+        "responses":0,
+        "dateTime": "Yesterday at 2:00"
+      },
+      {
+        "name": "Shorter time between product releases",
+        "manager": "Sumeet Mohdi",
+        "description": "Product release times are averaging 2.1 weeks longer than at this time in 2020.",
+        "sent": false,
+        "responses":7,
+        "dateTime": "Yesterday at 2:00"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "department": "Marketing",
+    "issues": [
+      {
+        "name": "Absenteeism in Marketing",
+        "department": "Human Resources",
+        "manager": "Carlos Juarez",
+        "description": "Marketing department staff are on premises 42% of the time they were at this time last year.",
+        "sent": false,
+        "responses":12,
+        "dateTime": "4 days ago"
+      }
+    ]
+  }
+]

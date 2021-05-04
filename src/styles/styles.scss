@@ -1,0 +1,46 @@
+@import "./_colors.scss";
+@import "~bootstrap/scss/bootstrap";
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&display=swap");
+
+body {
+  color: $body-text;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.1em;
+  background:#eee;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: #000;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.05em;
+}
+
+b {
+  font-weight: 600;
+}
+
+.caption {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #888;
+}
+
+span.badge {
+  font-size: 100%;
+  &.badge-secondary {
+    background: #aaa;
+  }
+}

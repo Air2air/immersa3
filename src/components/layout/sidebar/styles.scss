@@ -1,0 +1,26 @@
+.sidebar {
+  font-size: 0.93em;
+  background: none;
+  height: 100vh !important;
+  overflow: hidden;
+  .header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 24px;
+    }
+  }
+  .nav {
+    a {
+      background: none;
+      border-radius: 4px;
+      color: #888;
+      text-decoration: none;
+      &:hover {
+        color: #000;
+        background: #ddd;
+      }
+    }
+  }
+}
