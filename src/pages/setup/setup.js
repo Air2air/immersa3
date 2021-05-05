@@ -12,13 +12,21 @@ import {
   Dropdown,
 } from "react-bootstrap";
 import { BiTimeFive } from "react-icons/bi";
-import { FaUser, FaChevronDown } from "react-icons/fa";
-import issuesJson from "../../data/data.json";
+import { CgMonday } from "react-icons/cg";
+import {
+  FaUser,
+  FaChevronDown,
+  FaSalesforce,
+  FaSlack,
+  FaGithub,
+} from "react-icons/fa";
+import _ from "lodash";
+import setupJson from "./../../data/setup.json";
 
-const data = issuesJson;
+const data = setupJson;
 
-const eachDepartment = data.map((category) => {
-  const departmentIssuesList = category.issues.map(function (item) {
+const eachSetup = data.map((category) => {
+  const SetupList = category.nodes.map(function (item) {
     return (
       // Inner loop
       <ListGroup.Item className="py-2" key={item.id}>
@@ -61,8 +69,17 @@ const eachDepartment = data.map((category) => {
       </ListGroup.Item>
     );
   });
+
+
+
+const SalesForceTag = category.icon;
+const CustomTag = React.createElement(SalesForceTag);
+
+
+
   return (
     // Outer loop
+
     <>
       <Accordion className="mb-2">
         <Card>
@@ -76,16 +93,18 @@ const eachDepartment = data.map((category) => {
             >
               <div className="d-flex align-items-center justify-content-between">
                 <Badge pill variant="danger" className="mr-4">
-                  {departmentIssuesList.length}
+                  {SetupList.length}
                 </Badge>
-                <div>{category.department}</div>
+                <div>{category.application}</div>
+                {CustomTag}
+                works: {category.icon}
               </div>
               <FaChevronDown className="mr-2" />
             </Accordion.Toggle>
           </Card.Header>
           <Accordion.Collapse eventKey={category.id}>
             <Card.Body className="p-2">
-              <ListGroup variant="flush">{departmentIssuesList}</ListGroup>
+              <ListGroup variant="flush">{SetupList}</ListGroup>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -99,7 +118,7 @@ export default function SetupPage() {
     <>
       <Row>
         <Col className="d-flex justify-content-between">
-          <h4 className="mb-4">Issues</h4>
+          <h4 className="mb-4">Setups</h4>
           <DropdownButton
             variant="outline-secondary"
             id="dropdown-item-button"
@@ -110,8 +129,8 @@ export default function SetupPage() {
           </DropdownButton>
         </Col>
       </Row>
-      <div className="categories">{eachDepartment}</div>
-      <p className="mt-4">Click a department to see more.</p>
+      <div className="categories">{eachSetup}</div>
+      <p className="mt-4">Click a application to see more.</p>
     </>
   );
 }

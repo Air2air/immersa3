@@ -13,7 +13,7 @@ import {
 } from "react-bootstrap";
 import { BiTimeFive } from "react-icons/bi";
 import { FaUser, FaChevronDown } from "react-icons/fa";
-import issuesJson from "./../../data/data.json";
+import issuesJson from "./../../data/issues.json";
 
 const data = issuesJson;
 
