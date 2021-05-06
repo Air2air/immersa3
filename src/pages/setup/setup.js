@@ -20,7 +20,6 @@ import {
   FaSlack,
   FaGithub,
 } from "react-icons/fa";
-import _ from "lodash";
 import setupJson from "./../../data/setup.json";
 
 const data = setupJson;
@@ -28,8 +27,7 @@ const data = setupJson;
 const eachSetup = data.map((category) => {
   const SetupList = category.nodes.map(function (item) {
     return (
-      // Inner loop
-      <ListGroup.Item className="py-2" key={item.id}>
+      <ListGroup.Item className="py-2" ref={item.id} key={item.id}>
         <Row>
           <Col xs={6} className="d-flex align-items-center caption py-2">
             <BiTimeFive className="mr-2" style={{ fill: "lightgray" }} />
@@ -70,46 +68,50 @@ const eachSetup = data.map((category) => {
     );
   });
 
-
-
-const SalesForceTag = category.icon;
-const CustomTag = React.createElement(SalesForceTag);
-
-
+  function GetIcon(props) {
+    switch (props.value) {
+      case "FaSalesforce":
+        return <FaSalesforce />;
+      case "FaSlack":
+        return <FaSlack />;
+      case "FaGithub":
+        return <FaGithub />;
+      case "CgMonday":
+        return <CgMonday />;
+      default:
+        return null;
+    }
+  }
 
   return (
     // Outer loop
-
-    <>
-      <Accordion className="mb-2">
-        <Card>
-          <Card.Header className="p-2">
-            <Accordion.Toggle
-              as={Card.Body}
-              variant="link"
-              eventKey={category.id}
-              className="d-flex action align-items-center justify-content-between p-2"
-              style={{ cursor: "pointer" }}
-            >
-              <div className="d-flex align-items-center justify-content-between">
-                <Badge pill variant="danger" className="mr-4">
-                  {SetupList.length}
-                </Badge>
-                <div>{category.application}</div>
-                {CustomTag}
-                works: {category.icon}
-              </div>
-              <FaChevronDown className="mr-2" />
-            </Accordion.Toggle>
-          </Card.Header>
-          <Accordion.Collapse eventKey={category.id}>
-            <Card.Body className="p-2">
-              <ListGroup variant="flush">{SetupList}</ListGroup>
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
-      </Accordion>
-    </>
+    <Accordion className="mb-2" key={category.id}>
+      <Card>
+        <Card.Header className="p-2">
+          <Accordion.Toggle
+            as={Card.Body}
+            variant="link"
+            eventKey={category.id}
+            className="d-flex action align-items-center justify-content-between p-2"
+            style={{ cursor: "pointer" }}
+          >
+            <div className="d-flex align-items-center justify-content-between">
+              <Badge pill variant="danger" className="mr-4">
+                {SetupList.length}
+              </Badge>
+              <div>{category.application}</div>
+              <GetIcon value={category.icon} />
+            </div>
+            <FaChevronDown className="mr-2" />
+          </Accordion.Toggle>
+        </Card.Header>
+        <Accordion.Collapse eventKey={category.id}>
+          <Card.Body className="p-2">
+            <ListGroup variant="flush">{SetupList}</ListGroup>
+          </Card.Body>
+        </Accordion.Collapse>
+      </Card>
+    </Accordion>
   );
 });
 

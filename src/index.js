@@ -4,7 +4,7 @@ import { HashRouter, Route } from "react-router-dom";
 
 import { Container, Row, Col } from "react-bootstrap";
 
-import Sidebar from "./components/layout/sidebar/sidebar";
+// import Sidebar from "./components/layout/sidebar/sidebar";
 import Header from "./components/layout/header/header";
 
 import DashboardPage from "./pages/dashboard/dashboard";
@@ -20,7 +20,7 @@ const App = () => (
       <HashRouter basename="/">
         <Container fluid>
           <Row>
-            <Sidebar />
+            {/* <Sidebar /> */}
             <Col>
               <Header />
               <Route exact path="/" component={HomePage} />
