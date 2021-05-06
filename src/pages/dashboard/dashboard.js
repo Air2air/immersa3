@@ -1,14 +1,25 @@
 import React from "react";
-import { Card, Row, Col, Dropdown, DropdownButton, ButtonToolbar, Button } from "react-bootstrap";
+import {
+  Card,
+  Row,
+  Col,
+  Dropdown,
+  DropdownButton,
+  ButtonToolbar,
+  Button,
+} from "react-bootstrap";
+import Panel from "../../components/panel/panel";
 import BarChart from "../../components/charts/barChart";
 import CalendarChart from "../../components/charts/calendarChart";
 import PieChart from "../../components/charts/pieChart";
 import { BsFillGearFill } from "react-icons/bs";
-import { FaShareAlt } from "react-icons/fa";
+import { FaShareAlt, FaDownload } from "react-icons/fa";
 
 export default function DashboardPage() {
   return (
     <>
+<Panel></Panel>
+
       <Row>
         <Col className="d-flex justify-content-between">
           <h4 className="mb-4">Dashboard</h4>
@@ -22,7 +33,6 @@ export default function DashboardPage() {
           </DropdownButton>
         </Col>
       </Row>
-
 
       <Row>
         <Col xs={6}>
@@ -49,7 +59,10 @@ export default function DashboardPage() {
               </Card.Title>
               <PieChart />
               <Row>
-              <Col xs={12} className="d-flex align-items-center justify-content-end m-2 caption">
+                <Col
+                  xs={12}
+                  className="d-flex align-items-center justify-content-end m-2 caption"
+                >
                   <ButtonToolbar className="justify-content-end">
                     <Button variant="secondary" className="mr-3">
                       Refresh

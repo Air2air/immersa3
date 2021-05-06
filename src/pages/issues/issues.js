@@ -11,6 +11,7 @@ import {
   DropdownButton,
   Dropdown,
 } from "react-bootstrap";
+import Panel from "../../components/panel/panel";
 import { BiTimeFive } from "react-icons/bi";
 import { FaUser, FaChevronDown } from "react-icons/fa";
 import issuesJson from "./../../data/issues.json";
@@ -97,6 +98,7 @@ const eachDepartment = data.map((category) => {
 export default function IssuesPage() {
   return (
     <>
+      <Panel></Panel>
       <Row>
         <Col className="d-flex justify-content-between">
           <h4 className="mb-4">Issues</h4>

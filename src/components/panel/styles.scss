@@ -1,0 +1,26 @@
+@import "./../../styles/_colors.scss";
+@import "./../../styles/_text.scss";
+
+.panel {
+  position: relative;
+  height: 200px;
+  .panel-buttons {
+    position: absolute;
+    right: 40px;
+    .btn-primary {
+    }
+  }
+}
+
+.panel {
+  background: $panel-background;
+  .panel-buttons {
+    .btn-primary {
+      background: none;
+      border-color: transparent;
+      &:hover {
+        background: lighten($panel-background, 20%);
+      }
+    }
+  }
+}

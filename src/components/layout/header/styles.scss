@@ -1,0 +1,57 @@
+@import "./../../../styles/_colors.scss";
+@import "./../../../styles/_text.scss";
+
+.navbar {
+  .navbar-brand {
+    //background: red;
+    img {
+      transform: translateY(-5px);
+    }
+  }
+  .navbar-nav {
+    a.nav-link {
+      color: $body-text;
+      border-radius: 4px;
+      &:hover {
+        background-color: lighten($body-text, 50%);
+      }
+      svg {
+        fill: lighten($body-text, 40%);
+        transform: translateY(-2px);
+      }
+    }
+    a.nav-icon-link {
+      color: lighten($body-text, 30%);
+      &:hover {
+        color: $hover-blue;
+        background-color: lighten($hover-blue, 26%);
+        svg {
+            fill: $hover-blue;
+          }
+      }
+      &:focus {
+        color: $hover-blue;
+        background-color: lighten($hover-blue, 26%);
+      }
+      &:active {
+        color: $hover-blue;
+        background-color: lighten($hover-blue, 26%);
+      }
+      svg {
+        fill: lighten($body-text, 40%);
+      }
+    }
+  }
+}
+
+/* --- Dev ---*/
+// .navbar {
+//   .navbar-brand {
+//     background: red;
+//   }
+//   .navbar-nav {
+//     a.nav-link {
+//       background: blue;
+//     }
+//   }
+// }

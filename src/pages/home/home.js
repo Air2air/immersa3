@@ -1,30 +1,31 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Panel from "../../components/panel/panel";
 
 const HomePage = () => {
   return (
     <>
-      <h4 className="mb-4">Admin page, first draft </h4>
-      <p>This is a very dry first cut at an Admin page.</p>
-      <p>
-        Doesn't look pretty yet, we would iterate back and forth a lot before
-        making it look nice, and doing the responsive views.
-      </p>
-      <p>
-        Check out the <Link to="/dashboard">Dashboard</Link> and{" "}
-        <Link to="/issues">Issues list</Link>.
-      </p>
-
-      <hr className="my-5" />
-
+      <Panel></Panel>
+      <Row>
+        <h4 className="mb-4">Admin page, first draft </h4>
+        <p>This is a very dry first cut at an Admin page.</p>
+        <p>
+          Doesn't look pretty yet, we would iterate back and forth a lot before
+          making it look nice, and doing the responsive views.
+        </p>
+        <p>
+          Check out the <Link to="/dashboard">Dashboard</Link> and{" "}
+          <Link to="/issues">Issues list</Link>.
+        </p>
+      </Row>
       <hr className="my-5" />
       <h4 className="my-5">Next rev notes</h4>
       <Row className="mb-5">
         <Col>
           <ul>
             <li>App is configured by Operations users</li>
-            <li>PLugs in to Salesforece and others</li>
+            <li>PLugs in to Salesforce and others</li>
           </ul>
         </Col>
         <Col>
@@ -34,11 +35,6 @@ const HomePage = () => {
           </ul>
         </Col>
       </Row>
-
-
-
-
-
 
       <hr className="my-5" />
 
@@ -52,7 +48,6 @@ const HomePage = () => {
             <li>Frequency of build updates</li>
           </ul>
         </Col>
-        
       </Row>
 
       <hr className="my-5" />
@@ -76,7 +71,6 @@ const HomePage = () => {
         </Col>
       </Row>
 
-
       <hr className="my-5" />
       <h4 className="my-5">First deliverables</h4>
       <Row className="mb-5">
@@ -94,7 +88,8 @@ const HomePage = () => {
         </Col>
       </Row>
 
-      <br /><br />
+      <br />
+      <br />
     </>
   );
 };
